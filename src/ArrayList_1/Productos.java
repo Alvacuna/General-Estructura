@@ -67,7 +67,8 @@ public class Productos {
         }
         return s;
     }
-    public ArrayList<Producto> buscarProductos(String descripcion){
+
+    public ArrayList<Producto> buscarProductos(String descripcion) {
         ArrayList<Producto> resultado = new ArrayList<Producto>();
         for (int i = 0; i < listaProductos.size(); i++) {
             Producto p = listaProductos.get(i);
@@ -77,6 +78,7 @@ public class Productos {
         }
         return resultado;
     }
+
     public void ordenarProductosPorPrecio() {
         Collections.sort(listaProductos, new Comparator<Producto>() {
             @Override
