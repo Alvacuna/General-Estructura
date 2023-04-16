@@ -13,6 +13,10 @@ import javax.swing.JOptionPane;
 public class FormPilas extends javax.swing.JFrame {
     Pila pi1;
     Pila pi2;
+    Pila pAux;
+    Pila pil2;
+   Pila pil3;
+   Pila PF,PR;
     /**
      * Creates new form FormPilas
      */
@@ -46,6 +50,16 @@ public class FormPilas extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jToggleButton2 = new javax.swing.JToggleButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -57,7 +71,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(20, 30, 58, 22);
+        jButton1.setBounds(20, 60, 58, 22);
 
         jButton2.setText("Adicionar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +80,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(100, 30, 90, 20);
+        jButton2.setBounds(90, 60, 90, 20);
 
         jButton3.setText("Eliminar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +89,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(210, 30, 73, 22);
+        jButton3.setBounds(200, 60, 73, 22);
 
         jButton4.setText("Listar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +98,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(300, 30, 70, 22);
+        jButton4.setBounds(300, 60, 70, 22);
 
         jButton5.setText("Salir");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +107,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(390, 30, 90, 22);
+        jButton5.setBounds(390, 60, 90, 22);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -109,7 +123,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(510, 30, 120, 22);
+        jButton6.setBounds(500, 60, 120, 22);
 
         jButton7.setText("Medio");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +132,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7);
-        jButton7.setBounds(500, 80, 130, 20);
+        jButton7.setBounds(490, 110, 130, 20);
 
         jButton8.setText("Sumar Ultimo Primero");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +141,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(500, 110, 130, 30);
+        jButton8.setBounds(490, 140, 130, 30);
 
         jButton9.setText("Invertir Pila");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +150,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(500, 160, 130, 22);
+        jButton9.setBounds(490, 190, 130, 22);
 
         jToggleButton1.setText("Eliminar rep");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +159,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jToggleButton1);
-        jToggleButton1.setBounds(501, 200, 130, 22);
+        jToggleButton1.setBounds(500, 230, 130, 22);
 
         jButton10.setText("Min Max");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +168,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton10);
-        jButton10.setBounds(500, 230, 130, 22);
+        jButton10.setBounds(490, 260, 130, 22);
 
         jButton11.setText("Generar Pila");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +177,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton11);
-        jButton11.setBounds(500, 260, 130, 22);
+        jButton11.setBounds(490, 290, 130, 22);
 
         jButton12.setText("Asendente");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +186,7 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton12);
-        jButton12.setBounds(500, 290, 130, 22);
+        jButton12.setBounds(490, 320, 130, 22);
 
         jToggleButton2.setText("Decendente");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +195,97 @@ public class FormPilas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jToggleButton2);
-        jToggleButton2.setBounds(500, 320, 130, 22);
+        jToggleButton2.setBounds(490, 350, 130, 22);
+
+        jButton13.setText("Eliminar Negativo");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton13);
+        jButton13.setBounds(341, 350, 130, 22);
+
+        jButton14.setText("Eliminar rep");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton14);
+        jButton14.setBounds(231, 350, 100, 22);
+
+        jButton15.setText("Crear aux");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton15);
+        jButton15.setBounds(10, 380, 80, 22);
+
+        jButton16.setText("Adicionar");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton16);
+        jButton16.setBounds(100, 380, 81, 22);
+
+        jButton17.setText("Listar");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton17);
+        jButton17.setBounds(120, 350, 58, 22);
+
+        jButton18.setText("Adicionar PAUX");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton18);
+        jButton18.setBounds(0, 350, 120, 22);
+
+        jButton19.setText("Intercambiar Adyacente");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton19);
+        jButton19.setBounds(10, 410, 170, 22);
+
+        jButton20.setText("Eliminar Primer Par");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton20);
+        jButton20.setBounds(200, 410, 140, 22);
+
+        jButton21.setText("Frecuencia Elementos");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton21);
+        jButton21.setBounds(350, 410, 140, 22);
+
+        jButton22.setText("Apilar Pila");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton22);
+        jButton22.setBounds(510, 410, 83, 22);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -255,6 +359,63 @@ public class FormPilas extends javax.swing.JFrame {
         pi1.ordenarDescendente();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        pi1.eliminarNegativos();
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        pi1.eliminarRep();
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null , "Ingrese el tamaño de la pila"));
+        pAux = new Pila(n);
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        String s = pAux.listar();
+        jTextArea1.setText("");
+        jTextArea1.append(s);
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null , "Ingrese un numero"));
+        pAux.adiciona(n);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        pi1.adicionarEncima(pAux);
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        pi1.intercambAdyacente();
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        pi1.eliminaPrimerPar();
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+         PF = new Pila(pi1.MAX);
+      PR = new Pila(pi1.MAX);
+      pil2 = new Pila(pi1.MAX);
+      pil2 = pi1.copiaPila();
+      pi1.frecuencia(pi1, PF, PR);
+      pi1=pil2;
+      String s;
+      jTextArea1.setText("");
+      s=pi1.listar();
+      jTextArea1.append(s+"\n");
+      s=PF.listar();
+      jTextArea1.append(s+"\n");
+      s=PR.listar();
+      jTextArea1.append(s+"\n");
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        pi1.apilarPilaBEnPilaA(pAux);
+    }//GEN-LAST:event_jButton22ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -295,7 +456,17 @@ public class FormPilas extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
