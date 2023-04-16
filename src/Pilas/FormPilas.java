@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class FormPilas extends javax.swing.JFrame {
     Pila pi1;
+    Pila pi2;
     /**
      * Creates new form FormPilas
      */
@@ -41,6 +42,10 @@ public class FormPilas extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -142,6 +147,42 @@ public class FormPilas extends javax.swing.JFrame {
         getContentPane().add(jToggleButton1);
         jToggleButton1.setBounds(501, 200, 130, 22);
 
+        jButton10.setText("Min Max");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton10);
+        jButton10.setBounds(500, 230, 130, 22);
+
+        jButton11.setText("Generar Pila");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton11);
+        jButton11.setBounds(500, 260, 130, 22);
+
+        jButton12.setText("Asendente");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton12);
+        jButton12.setBounds(500, 290, 130, 22);
+
+        jToggleButton2.setText("Decendente");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButton2);
+        jToggleButton2.setBounds(500, 320, 130, 22);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -192,6 +233,28 @@ public class FormPilas extends javax.swing.JFrame {
         pi1.eliminaRep();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        jTextArea1.setText("");
+        jTextArea1.append(pi1.mostrarElemtoMinMax());
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null , "ingrese el tamaño de la pila"));
+        pi2 = new Pila(n);
+        pi2.generarPila(pi2);
+        String s = pi2.listar();
+        jTextArea1.setText("");
+        jTextArea1.append(s);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        pi1.ordenarAscendente();
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        pi1.ordenarDescendente();
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,6 +292,9 @@ public class FormPilas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -240,5 +306,6 @@ public class FormPilas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
     // End of variables declaration//GEN-END:variables
 }
