@@ -11,18 +11,20 @@ import javax.swing.JOptionPane;
  * @author alvin
  */
 public class FormPilas extends javax.swing.JFrame {
+
     Pila pi1;
     Pila pi2;
     Pila pAux;
     Pila pil2;
-   Pila pil3;
-   Pila PF,PR;
+    Pila pil3;
+    Pila PF, PR;
+    Pila c;
     /**
      * Creates new form FormPilas
      */
     public FormPilas() {
         initComponents();
-        setBounds(200,100,800,500);
+        setBounds(200, 100, 800, 500);
     }
 
     /**
@@ -60,6 +62,12 @@ public class FormPilas extends javax.swing.JFrame {
         jButton20 = new javax.swing.JButton();
         jButton21 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -287,16 +295,70 @@ public class FormPilas extends javax.swing.JFrame {
         getContentPane().add(jButton22);
         jButton22.setBounds(510, 410, 83, 22);
 
+        jButton23.setText("Inser elem x");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton23);
+        jButton23.setBounds(200, 380, 100, 22);
+
+        jButton24.setText("Notacion PostFija");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton24);
+        jButton24.setBounds(310, 380, 130, 22);
+
+        jButton25.setText("Intercalar Pila");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton25);
+        jButton25.setBounds(460, 380, 120, 22);
+
+        jButton26.setText("Intercambiar Primer ULtimo");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton26);
+        jButton26.setBounds(0, 440, 180, 22);
+
+        jButton27.setText("Eliminar Primer Primo");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton27);
+        jButton27.setBounds(190, 440, 160, 22);
+
+        jButton28.setText("Iterseccionar Pila");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton28);
+        jButton28.setBounds(370, 440, 150, 22);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int n = Integer.parseInt(JOptionPane.showInputDialog(null , "Ingrese el tamaño de la pila"));
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el tamaño de la pila"));
         pi1 = new Pila(n);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int n = Integer.parseInt(JOptionPane.showInputDialog(null , "Ingrese un numero"));
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un numero"));
         pi1.adiciona(n);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -326,7 +388,7 @@ public class FormPilas extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         jTextArea1.setText("");
-        jTextArea1.append(pi1.sumarUltimoPrimero()+ "");
+        jTextArea1.append(pi1.sumarUltimoPrimero() + "");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -343,7 +405,7 @@ public class FormPilas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        int n = Integer.parseInt(JOptionPane.showInputDialog(null , "ingrese el tamaño de la pila"));
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null, "ingrese el tamaño de la pila"));
         pi2 = new Pila(n);
         pi2.generarPila(pi2);
         String s = pi2.listar();
@@ -368,7 +430,7 @@ public class FormPilas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        int n = Integer.parseInt(JOptionPane.showInputDialog(null , "Ingrese el tamaño de la pila"));
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el tamaño de la pila"));
         pAux = new Pila(n);
     }//GEN-LAST:event_jButton15ActionPerformed
 
@@ -379,7 +441,7 @@ public class FormPilas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        int n = Integer.parseInt(JOptionPane.showInputDialog(null , "Ingrese un numero"));
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un numero"));
         pAux.adiciona(n);
     }//GEN-LAST:event_jButton16ActionPerformed
 
@@ -396,25 +458,63 @@ public class FormPilas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-         PF = new Pila(pi1.MAX);
-      PR = new Pila(pi1.MAX);
-      pil2 = new Pila(pi1.MAX);
-      pil2 = pi1.copiaPila();
-      pi1.frecuencia(pi1, PF, PR);
-      pi1=pil2;
-      String s;
-      jTextArea1.setText("");
-      s=pi1.listar();
-      jTextArea1.append(s+"\n");
-      s=PF.listar();
-      jTextArea1.append(s+"\n");
-      s=PR.listar();
-      jTextArea1.append(s+"\n");
+        PF = new Pila(pi1.MAX);
+        PR = new Pila(pi1.MAX);
+        pil2 = new Pila(pi1.MAX);
+        pil2 = pi1.copiaPila();
+        pi1.frecuencia(pi1, PF, PR);
+        pi1 = pil2;
+        String s;
+        jTextArea1.setText("");
+        s = pi1.listar();
+        jTextArea1.append(s + "\n");
+        s = PF.listar();
+        jTextArea1.append(s + "\n");
+        s = PR.listar();
+        jTextArea1.append(s + "\n");
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         pi1.apilarPilaBEnPilaA(pAux);
     }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null, "ingrese elem x"));
+        pi1.insertElemx(n);
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        String s = "2 2 -";
+        s = JOptionPane.showInputDialog(null, "ingrese post fija");
+        String[] palabras = s.split(" ");
+        int es1 = Integer.parseInt(palabras[0]);
+        int es2 = Integer.parseInt(palabras[1]);
+        pi1.adiciona(pi1.realizarOperacion(es1, es2, palabras[2]));
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        c = new Pila(pi1.MAX + pi2.MAX);
+        c.intercalarPilas(pi1, pi2, c);
+        String s = c.listar();
+        jTextArea1.setText("");
+        jTextArea1.append(s);
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        pi1.intercambiarPrimerUlti();
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        pi1.eliminaPrimerPrimo();
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        c = new Pila(pi1.MAX + pi2.MAX);
+        c.restaura(c.interseccionPilas(pi1, pi2));
+        String s = c.listar();
+        jTextArea1.setText("");
+        jTextArea1.append(s);
+    }//GEN-LAST:event_jButton28ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -467,6 +567,12 @@ public class FormPilas extends javax.swing.JFrame {
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

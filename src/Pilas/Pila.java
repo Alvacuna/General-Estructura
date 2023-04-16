@@ -465,7 +465,6 @@ public class Pila {
       jTextArea1.append(s+"\n");
       s=PR.listar();
       jTextArea1.append(s+"\n");*/
-
     // Apilar los elementos de la pila b sobre la pila a. 
     public void apilarPilaBEnPilaA(Pila a) {
         while (!a.vacio()) {
@@ -473,4 +472,116 @@ public class Pila {
             adiciona(elemento);
         }
     }
+
+    public void insertElemx(int x) {
+        int e;
+        Pila PA = new Pila(MAX);
+        e = elimina();
+        if (x < e) {
+            adiciona(x);
+            ordenarAscendente();
+        } else {
+            adiciona(e);
+        }
+
+    }
+
+    public int realizarOperacion(int num1, int num2, String operador) {
+        switch (operador) {
+            case "+":
+                return num1 + num2;
+            case "-":
+                return num1 - num2;
+            case "*":
+                return num1 * num2;
+            case "/":
+                return num1 / num2;
+            default:
+                throw new IllegalArgumentException("Operador no válido: " + operador);
+        }
+
+    }
+
+    //Escriba un programa que lea una expresión en notación postfija e imprima el resultado de su evaluación.
+    public void intercalarPilas(Pila A, Pila B, Pila C) {
+
+        Pila aux = new Pila(A.MAX + B.MAX);
+        while (!A.vacio() && !B.vacio()) {
+            aux.adiciona(A.elimina());
+            aux.adiciona(B.elimina());
+        }
+        while (!A.vacio()) {
+            aux.adiciona(A.elimina());
+        }
+        while (!B.vacio()) {
+            aux.adiciona(B.elimina());
+        }
+        while (!aux.vacio()) {
+            C.adiciona(aux.elimina());
+        }
+    }
+
+    //Realizar un procedimiento para intercambiar el último elemento de la pila con el primer elemento
+    public void intercambiarPrimerUlti() {
+        Pila PA = new Pila(MAX);
+        int primerElem = elimina();
+        adiciona(primerElem);
+        int ultimoElem;
+        while (!vacio()) {
+            PA.adiciona(elimina());
+        }
+        ultimoElem = PA.elimina();
+        PA.adiciona(primerElem);
+        restaura(PA);
+        elimina();
+        adiciona(ultimoElem);
+    }
+
+    public boolean esPrimo(int e) {
+        int count = 0;
+        for (int i = 2; i < e; i++) {
+            if (e % i == 0) {
+                count++;
+            }
+        }
+        return count == 0;
+    }
+
+    public void eliminaPrimerPrimo() {
+        Pila aux = new Pila(MAX);
+        boolean eliminado = false;
+
+        while (!vacio() && !eliminado) {
+            int e = elimina();
+            if (esPrimo(e)) {
+                eliminado = true;
+            } else {
+                aux.adiciona(e);
+            }
+        }
+
+        while (!aux.vacio()) {
+            adiciona(aux.elimina());
+        }
+
+        if (!eliminado) {
+            JOptionPane.showMessageDialog(null, "No se encontró ningún elemento primo en la pila");
+        }
+    }
+
+    public Pila interseccionPilas(Pila a, Pila b) {
+        Pila c = new Pila(a.MAX);
+        while (!a.vacio() && !b.vacio()) {
+            if (a.tope == b.tope) {
+                c.adiciona(a.elimina());
+                b.elimina();
+            } else if (a.tope < b.tope) {
+                a.elimina();
+            } else {
+                b.elimina();
+            }
+        }
+        return c;
+    }
+
 }
